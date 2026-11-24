@@ -1,0 +1,13 @@
+{
+  "ALLOWED_BUNDLE_ID": "com.example.airsim",
+  "DASHBOARD_TOKEN": "",
+  "NOTION_TOKEN": "",
+  "NOTION_DATABASE_ID": "",
+  "WEBRTC_TRANSPORT_READY": "false",
+  "WEBRTC_ROLLOUT_PERCENT": "0",
+  "APNS_AUTH_MODE": "certificate",
+  "APNS_CERT_PATH": "/etc/airsim/apns/apns.pem",
+  "APNS_KEY_PATH": "/etc/airsim/apns/apns.key",
+  "APNS_ENVIRONMENT": "production",
+  "APNS_BUNDLE_ID": "com.example.airsim"
+}

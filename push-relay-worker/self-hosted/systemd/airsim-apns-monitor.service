@@ -1,0 +1,14 @@
+[Unit]
+Description=AirSIM APNs certificate expiry and validity monitor
+OnFailure=airsim-apns-alert.service
+[Service]
+Type=oneshot
+User=airsim-relay
+Group=airsim-relay
+Environment=AIRSIM_CONFIG_FILE=/etc/airsim-relay/config.json
+ExecStart=/opt/airsim-relay/node/bin/node /opt/airsim-relay/current/push-relay-worker/self-hosted/apns-monitor.mjs
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+SyslogIdentifier=airsim-apns-monitor

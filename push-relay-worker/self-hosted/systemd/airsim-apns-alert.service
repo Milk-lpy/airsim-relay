@@ -1,0 +1,8 @@
+[Unit]
+Description=Record critical AirSIM APNs certificate alert
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/logger -p daemon.crit -t airsim-apns-certificate ALERT: AirSIM APNs certificate invalid or expires within 30 days. Inspect journalctl -u airsim-apns-monitor.service and renew the certificate.
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true

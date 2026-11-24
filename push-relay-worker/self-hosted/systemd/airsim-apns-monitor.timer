@@ -1,0 +1,8 @@
+[Unit]
+Description=Check AirSIM APNs certificates daily
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=15min
+[Install]
+WantedBy=timers.target
