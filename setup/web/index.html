@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>部署控制台 · AirSIM Relay</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">跳转到配置表单</a>
+  <aside class="sidebar">
+    <div class="brand"><span class="signal" aria-hidden="true"><i></i><i></i><i></i></span><span>AirSIM<small>Relay</small></span></div>
+    <nav aria-label="部署步骤" id="steps"></nav>
+    <div class="service-state"><span class="dot" aria-hidden="true"></span><span id="service-state">等待连接</span></div>
+  </aside>
+  <main id="workspace" tabindex="-1">
+    <header class="topbar"><strong>部署控制台</strong><button type="button" id="logout" class="quiet" hidden>退出控制台</button></header>
+    <div class="workspace">
+      <div id="notice" role="alert" hidden></div>
+      <div id="screen" aria-live="off"><p>正在连接控制台…</p></div>
+      <noscript>请启用 JavaScript 后打开部署控制台。</noscript>
+    </div>
+  </main>
+</body>
+</html>

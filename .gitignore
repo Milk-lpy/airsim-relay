@@ -23,3 +23,5 @@ backups/
 secrets/
 coverage/
 .DS_Store
+!setup/trust/apple-roots.pem
+!setup/trust/apple-intermediates.pem

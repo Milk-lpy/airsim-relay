@@ -1,0 +1,26 @@
+services:
+  relay:
+    build: .
+    image: ${AIRSIM_IMAGE:-airsim-relay:local}
+    environment:
+      AIRSIM_SUGGESTED_HOST: ${AIRSIM_BIND_IP:-127.0.0.1}
+    init: true
+    restart: unless-stopped
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,mode=1777
+    ports:
+      - "127.0.0.1:${AIRSIM_SETUP_PORT:-18181}:18181"
+      - "${AIRSIM_BIND_IP:-127.0.0.1}:18788:18788"
+    volumes:
+      - relay-data:/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:18181/').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+volumes:
+  relay-data:
